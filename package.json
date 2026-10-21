@@ -1,0 +1,13 @@
+{
+  "name": "kokcha-eshiklar-bot",
+  "version": "1.0.0",
+  "description": "Ko'kcha Eshiklar rasmiy Telegram boti",
+  "main": "bot.js",
+  "type": "module",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "keywords": ["telegram", "bot", "kokcha-doors"],
+  "author": "Ko'kcha Eshiklar",
+  "license": "ISC"
+}

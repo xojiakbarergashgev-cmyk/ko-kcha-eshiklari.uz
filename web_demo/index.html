@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ko'kcha Eshiklar — Telegram Bot Demo & Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Header -->
+    <header class="main-header">
+      <div class="brand">
+        <div class="brand-badge">
+          <span class="pulse-dot"></span> Online Bot
+        </div>
+        <h1>🏛 Ko'kcha Eshiklar <span class="highlight">Telegram Boti</span></h1>
+        <p class="subtitle">Eshiklar katalogi, narx kalkulyatori, bepul zamer (o'lchov) va admin panelli to'liq tizim</p>
+      </div>
+
+      <div class="header-nav">
+        <button class="nav-tab active" data-tab="simulator" id="tabBtnSimulator">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          Telegram Simulyatori
+        </button>
+        <button class="nav-tab" data-tab="admin" id="tabBtnAdmin">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+          Admin Paneli (<span id="adminOrdersBadge">0</span>)
+        </button>
+        <button class="nav-tab" data-tab="guide" id="tabBtnGuide">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          Ishga tushirish qo'llanmasi
+        </button>
+      </div>
+    </header>
+
+    <!-- Content Sections -->
+    <main class="content-wrapper">
+      
+      <!-- TAB 1: TELEGRAM BOT SIMULATOR -->
+      <section id="simulatorTab" class="tab-pane active">
+        <div class="simulator-layout">
+          
+          <!-- Left: Telegram Device Screen -->
+          <div class="phone-mockup">
+            <div class="phone-top-bar">
+              <span class="notch"></span>
+            </div>
+
+            <!-- Telegram App Header -->
+            <div class="tg-header">
+              <button class="tg-back-btn" title="Orqaga">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <div class="tg-avatar">
+                <span>🚪</span>
+              </div>
+              <div class="tg-user-info">
+                <h3>Ko'kcha Eshiklar <span class="verified-icon">✓</span></h3>
+                <p>@kokcha_eshiklaruz_bot • 15 yillik sifat kafolati</p>
+              </div>
+              <button class="tg-menu-btn" id="btnRestartBot" title="Botni qayta boshlash (/start)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+              </button>
+            </div>
+
+            <!-- Chat Messages Container -->
+            <div class="tg-chat-area" id="chatArea">
+              <!-- Dynamically populated messages -->
+            </div>
+
+            <!-- Telegram Reply Keyboard at Bottom -->
+            <div class="tg-keyboard-dock" id="replyKeyboardArea">
+              <!-- Buttons dynamically rendered -->
+            </div>
+
+            <!-- Telegram Input Bar (when typing) -->
+            <div class="tg-input-bar">
+              <input type="text" id="tgInputText" placeholder="Xabar yozing..." />
+              <button id="tgSendBtn" title="Yuborish">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Bot Information & Features Showcase -->
+          <div class="features-sidebar">
+            <div class="feature-card hero-feature">
+              <div class="feature-badge">100% Tayyor Bot Kodi</div>
+              <h3>Aiogram 3.x va SQLite Arxitekturasi</h3>
+              <p>Bot O'zbekiston bozoridagi yetakchi eshik ustaxonasi va shourumlari talablariga to'liq moslashtirilgan:</p>
+              
+              <ul class="feature-list">
+                <li>
+                  <div class="f-icon">🚪</div>
+                  <div>
+                    <strong>Katalog & Modellarni ko'rish</strong>
+                    <span>MDF, Shpon, Invisible (yashirin), Kirish bronlangan eshiklar rasmlari va narxlari bilan.</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="f-icon">📐</div>
+                  <div>
+                    <strong>Zamer (O'lchov olish) FSM tizimi</strong>
+                    <span>Mijozning ismi, telefon raqami, manzili yoki GPS lokatsiyasi va qulay vaqtini bosqichma-bosqich qabul qiladi.</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="f-icon">🧮</div>
+                  <div>
+                    <strong>Interaktiv Narx Kalkulyatori</strong>
+                    <span>Eshik o'lchami, qoplamasi, furniturasi va o'rnatish xizmatiga qarab narxni sekundida hisoblaydi.</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="f-icon">🔔</div>
+                  <div>
+                    <strong>Adminlarga Darhol Xabarnoma</strong>
+                    <span>Har bir yangi buyurtma yoki zamer tushganda admin Telegramiga to'liq ma'lumot va geolokatsiya yetib boradi.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="feature-card quick-actions-card">
+              <h4>⚡ Tezkor sinov tugmalari</h4>
+              <p>Simulyatordagi holatni bir klikda sinab ko'ring:</p>
+              <div class="quick-btns">
+                <button class="quick-btn" onclick="simulateCommand('/start')">🔄 /start buyrug'i</button>
+                <button class="quick-btn" onclick="simulateMenuClick('🚪 Eshiklar katalogi')">🚪 Katalog ochish</button>
+                <button class="quick-btn" onclick="simulateMenuClick('🧮 Narx hisoblash')">🧮 Kalkulyator</button>
+                <button class="quick-btn" onclick="simulateMenuClick('📐 Zamer chaqirish (Bepul)')">📐 Zamer buyurtma</button>
+                <button class="quick-btn" onclick="simulateMenuClick('📍 Manzil & Lokatsiya')">📍 Do'kon lokatsiyasi</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TAB 2: ADMIN PANEL -->
+      <section id="adminTab" class="tab-pane">
+        <div class="admin-panel-container">
+          <div class="admin-header-row">
+            <div>
+              <h2>🔐 Ko'kcha Eshiklar — Admin Boshqaruv Paneli</h2>
+              <p>Mijozlardan kelib tushgan zamerlar va eshik buyurtmalarini boshqarish</p>
+            </div>
+            <div class="admin-stats-summary">
+              <div class="stat-box">
+                <span class="stat-num" id="statTotalUsers">1</span>
+                <span class="stat-lbl">Mijozlar</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num" id="statTotalOrders">0</span>
+                <span class="stat-lbl">Jami buyurtmalar</span>
+              </div>
+              <div class="stat-box highlight-box">
+                <span class="stat-num" id="statNewOrders">0</span>
+                <span class="stat-lbl">Yangi zamerlar</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Orders Table -->
+          <div class="orders-table-wrapper">
+            <table class="orders-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Mijoz</th>
+                  <th>Telefon</th>
+                  <th>Tanlangan eshik</th>
+                  <th>Manzil / Lokatsiya</th>
+                  <th>Holati</th>
+                  <th>Vaqt</th>
+                  <th>Amallar</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody">
+                <!-- Dynamically populated or empty state -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: SETUP GUIDE -->
+      <section id="guideTab" class="tab-pane">
+        <div class="guide-container">
+          <h2>🚀 Botni Telegramda ishga tushirish (3 oddiy qadam)</h2>
+          <p class="guide-intro">Barcha fayllar allaqachon tayyorlangan. Botni o'z tokeningiz bilan ishga tushirish uchun quyidagi ko'rsatmalarga rioya qiling:</p>
+
+          <div class="guide-steps">
+            
+            <!-- Step 1 -->
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>Telegramda yangi bot ochish va Token olish</h3>
+                <p>Telegramda <a href="https://t.me/BotFather" target="_blank">@BotFather</a> rasmiy botini oching va quyidagi buyruqlarni bering:</p>
+                <div class="code-snippet">
+                  <code>/newbot</code>
+                </div>
+                <p>Botingiz uchun nom (masalan: <em>Ko'kcha Eshiklar</em>) va username (masalan: <em>kokcha_doors_bot</em>) kiriting. BotFather sizga quyidagi ko'rinishdagi tokenni beradi:</p>
+                <div class="code-snippet token-example">
+                  <code>7123456789:AAFoZ..._misol_token...</code>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>.env sozlama faylini to'ldirish</h3>
+                <p>Loyiha papkasidagi <code>.env.example</code> faylidan nusxa olib, <code>.env</code> fayli yarating va tokeningizni yozing:</p>
+                <div class="code-snippet">
+                  <pre>BOT_TOKEN=SIZNING_BOTFATHER_TOKENINGIZ
+ADMIN_IDS=SIZNING_TELEGRAM_ID
+SHOP_PHONE=+998 71 200 88 99</pre>
+                </div>
+                <small>O'z Telegram ID raqamingizni bilish uchun Telegramda <a href="https://t.me/userinfobot" target="_blank">@userinfobot</a> ga kiring.</small>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>Kutubxonalarni o'rnatish va botni yurgizish</h3>
+                <p>Terminalda loyiha papkasiga o'tib quyidagi buyruqlarni bajaring:</p>
+                <div class="code-snippet">
+                  <pre># 1. Virtual muhit yaratish
+python3 -m venv venv
+source venv/bin/activate
+
+# 2. Kutubxonalarni o'rnatish
+pip install -r requirements.txt
+
+# 3. Botni ishga tushirish
+python3 bot.py</pre>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Project Structure View -->
+          <div class="structure-card">
+            <h3>📁 Loyiha tuzilmasi (Fayllar arxitekturasi):</h3>
+            <pre class="tree-code">
+kokcha-eshiklar-bot/
+├── bot.py                  # Asosiy ishga tushirish fayli (Dispatcher & Polling)
+├── config.py               # Sozlamalar va .env yuklovchi
+├── requirements.txt        # Aiogram 3, Aiosqlite, Pydantic
+├── .env.example            # Token va sozlamalar namunasi
+├── database/
+│   └── db.py               # SQLite (foydalanuvchilar, buyurtmalar, zamerlar)
+├── data/
+│   └── doors_data.py       # Eshik modellari, narxlar, kalkulyator algoritmi
+├── handlers/
+│   ├── common.py           # /start, /help, Biz haqimizda, Manzil, Aloqa
+│   ├── catalog.py          # Kategoriyalar, modellar va rasmlar
+│   ├── calculator.py       # Narx hisoblash kalkulyatori
+│   ├── order.py            # Zamer chaqirish va buyurtma FSM
+│   └── admin.py            # Admin paneli, buyurtmalarni ko'rish, xabar tarqatish
+├── keyboards/
+│   ├── default_kb.py       # Asosiy menyu, telefon va lokatsiya tugmalari
+│   └── inline_kb.py        # Katalog va kalkulyator inline tugmalari
+├── assets/                 # Shourum va eshiklarning premium fotosuratlari
+└── web_demo/               # Interaktiv veb-namoyish va simulyator
+            </pre>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

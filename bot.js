@@ -91,8 +91,8 @@ if (!ADMIN_IDS.includes(8313616979)) {
 const SHOP_INFO = {
   name: "«Ko'kcha Eshiklar» MChJ",
   phones: [env.SHOP_PHONE || "+998 90 130 10 10"],
-  telegram: env.SHOP_TELEGRAM || "@kokcha_eshiklari_admin",
-  instagram: env.SHOP_INSTAGRAM || "https://instagram.com/kokcha_eshiklar",
+  telegram: env.SHOP_TELEGRAM || "@kokchaeshiklari",
+  instagram: env.SHOP_INSTAGRAM || "https://www.instagram.com/kokcha.eshiklari.uz?dlrf=MWtndHk5N3JjZGtoaw==",
   address: env.SHOP_ADDRESS || "Toshkent shahar, Sebzor 7",
   work_hours: env.SHOP_WORK_HOURS || "Har kuni 09:00 dan 19:00 gacha (dam olishsiz)",
   latitude: parseFloat(env.SHOP_LATITUDE || "41.3355"),
@@ -827,6 +827,7 @@ async function showContacts(chatId) {
     parse_mode: 'HTML',
     reply_markup: {
       inline_keyboard: [
+        [{ text: "💬 Telegram orqali bog'lanish", url: "https://t.me/" + SHOP_INFO.telegram.replace("@", "") }],
         [{ text: "📸 Instagram sahifamiz", url: SHOP_INFO.instagram }]
       ]
     }

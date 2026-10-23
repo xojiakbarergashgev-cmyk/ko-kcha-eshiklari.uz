@@ -596,8 +596,8 @@ function showContacts() {
   const text = 
     `📞 <b>Biz bilan bog'lanish:</b>\n\n` +
     `• 📞 <code>+998 90 130 10 10</code>\n\n` +
-    `Telegram: <a href="https://t.me/kokcha_eshiklari_admin" style="color:#38bdf8">@kokcha_eshiklari_admin</a>\n` +
-    `Instagram: <a href="https://instagram.com/kokcha_eshiklar" style="color:#38bdf8">@kokcha_eshiklar</a>\n` +
+    `Telegram: <a href="https://t.me/kokcha_eshiklari_admin" style="color:#38bdf8">@kokchaeshiklari</a>\n` +
+    `Instagram: <a href="https://www.instagram.com/kokcha.eshiklari.uz?dlrf=MWtndHk5N3JjZGtoaw==" style="color:#38bdf8">@kokcha_eshiklar</a>\n` +
     `⏱ Ish vaqti: 09:00 - 19:00 (dam olishsiz)`;
 
   addMessage("bot", text);

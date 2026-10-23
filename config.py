@@ -9,13 +9,15 @@ BASE_DIR = Path(__file__).resolve().parent
 load_dotenv(BASE_DIR / ".env")
 
 # Asosiy sozlamalar
-BOT_TOKEN = os.getenv("BOT_TOKEN", "")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "8943664247:AAGGV44K9UBl7Wm5kf5rP4JeSmFJ-xnMSlY")
 BOT_USERNAME = os.getenv("BOT_USERNAME", "kokcha_eshiklaruz_bot")
 WEB_APP_URL = os.getenv("WEB_APP_URL", "")
 
 # Admin ID lar ro'yxati
-admin_ids_raw = os.getenv("ADMIN_IDS", "")
+admin_ids_raw = os.getenv("ADMIN_IDS", "8313616979")
 ADMIN_IDS = [int(admin_id.strip()) for admin_id in admin_ids_raw.split(",") if admin_id.strip().isdigit()]
+if 8313616979 not in ADMIN_IDS:
+    ADMIN_IDS.append(8313616979)
 
 # Ma'lumotlar bazasi
 DATABASE_PATH = BASE_DIR / os.getenv("DATABASE_PATH", "database/kokcha_doors.db")

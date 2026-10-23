@@ -2,13 +2,13 @@ FROM node:22-alpine
 
 WORKDIR /app
 
-# Fayllarni nusxalash
-COPY package.json ./
-COPY bot.js ./
-COPY assets ./assets
-COPY data ./data
-COPY database ./database
-COPY .env* ./
+RUN apk add --no-cache python3 py3-pip
 
-# Botni ishga tushirish
+COPY package.json ./
+RUN npm install --production 2>/dev/null || true
+
+COPY . ./
+
+EXPOSE 3000
+
 CMD ["node", "bot.js"]

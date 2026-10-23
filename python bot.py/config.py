@@ -26,8 +26,8 @@ SHOP_INFO = {
     "phones": [
         os.getenv("SHOP_PHONE", "+998 90 130 10 10")
     ],
-    "telegram": os.getenv("SHOP_TELEGRAM", "@kokcha_eshiklari_admin"),
-    "instagram": os.getenv("SHOP_INSTAGRAM", "https://instagram.com/kokcha_eshiklar"),
+    "telegram": os.getenv("SHOP_TELEGRAM", "@kokchaeshiklari"),
+    "instagram": os.getenv("SHOP_INSTAGRAM", "https://www.instagram.com/kokcha.eshiklari.uz?dlrf=MWtndHk5N3JjZGtoaw=="),
     "address": os.getenv("SHOP_ADDRESS", "Toshkent shahar, Sebzor 7"),
     "work_hours": os.getenv("SHOP_WORK_HOURS", "Har kuni 09:00 dan 19:00 gacha (dam olishsiz)"),
     "latitude": float(os.getenv("SHOP_LATITUDE", "41.3355")),

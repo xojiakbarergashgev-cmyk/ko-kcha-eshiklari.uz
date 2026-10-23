@@ -1,0 +1,123 @@
+{
+  "users": [
+    {
+      "id": 8313616979,
+      "first_name": "Ergashev",
+      "username": "ergashev_395",
+      "created_at": "2026-10-19T18:04:40.808Z"
+    },
+    {
+      "id": 61134199,
+      "first_name": "Tashmuhamydova M",
+      "last_name": "",
+      "username": "tashmuhamedovaa",
+      "created_at": "2026-10-20T16:27:47.902Z"
+    },
+    {
+      "id": 1241641574,
+      "first_name": "Ботиржон Иргашевич",
+      "last_name": "",
+      "username": "ToshmuxamedovB",
+      "created_at": "2026-10-20T18:15:13.682Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "user_id": 8313616979,
+      "name": "Xojiakbar ergshev",
+      "phone": "+9923244448",
+      "door": "Xarid: «Ko'kcha Neoklassika Ivory»",
+      "address": "GPS: 41.30847, 69.18664",
+      "count": "6 ta",
+      "status": "completed",
+      "created_at": "2026-10-19T18:15:50.620Z",
+      "updated_at": "2026-10-20T16:17:24.330Z"
+    },
+    {
+      "id": 2,
+      "user_id": 8313616979,
+      "name": "Xojiakbar ergashev",
+      "phone": "+998992324448",
+      "door": "Kalkulyator orqali: invisible",
+      "address": "GPS: 41.30802, 69.18532",
+      "latitude": 41.308018,
+      "longitude": 69.185319,
+      "count": "100",
+      "status": "completed",
+      "created_at": "2026-10-20T16:16:42.862Z",
+      "updated_at": "2026-10-20T16:17:21.053Z"
+    },
+    {
+      "id": 3,
+      "user_id": 8313616979,
+      "username": "ergashev_395",
+      "name": "xojikabr",
+      "phone": "+998992324448",
+      "door": "Bepul professional o'lchov (Zamer)",
+      "address": "GPS: 41.30841, 69.18651",
+      "latitude": 41.308407,
+      "longitude": 69.186511,
+      "count": "1000\\",
+      "status": "contacted",
+      "created_at": "2026-10-20T16:35:11.333Z",
+      "updated_at": "2026-10-20T16:35:44.497Z"
+    },
+    {
+      "id": 4,
+      "user_id": 8313616979,
+      "username": "ergashev_395",
+      "name": "xojiakbar",
+      "phone": "+998992324448",
+      "door": "Bepul professional o'lchov (Zamer)",
+      "address": "GPS: 41.30823, 69.18647",
+      "latitude": 41.308227,
+      "longitude": 69.186473,
+      "count": "5",
+      "status": "new",
+      "created_at": "2026-10-20T16:59:41.771Z"
+    },
+    {
+      "id": 5,
+      "user_id": 61134199,
+      "username": "tashmuhamedovaa",
+      "name": "bilol",
+      "phone": "+998909404067",
+      "door": "Bepul professional o'lchov (Zamer)",
+      "address": "+998909404067",
+      "latitude": null,
+      "longitude": null,
+      "count": "9",
+      "status": "new",
+      "created_at": "2026-10-20T17:10:04.953Z"
+    },
+    {
+      "id": 6,
+      "user_id": 8313616979,
+      "username": "ergashev_395",
+      "name": "Xojiakbat",
+      "phone": "+998992324448",
+      "door": "Bepul professional o'lchov (Zamer)",
+      "address": "GPS: 41.28564, 69.20361",
+      "latitude": 41.285636,
+      "longitude": 69.203613,
+      "count": "34",
+      "status": "new",
+      "created_at": "2026-10-21T13:59:08.316Z"
+    },
+    {
+      "id": 7,
+      "user_id": 8313616979,
+      "username": "ergashev_395",
+      "name": "zor",
+      "phone": "+998992324448",
+      "door": "Bepul professional o'lchov (Zamer)",
+      "address": "GPS: 37.33460, -122.00920",
+      "latitude": 37.334601,
+      "longitude": -122.009199,
+      "count": "9999",
+      "status": "new",
+      "created_at": "2026-10-22T16:07:55.871Z"
+    }
+  ]
+}

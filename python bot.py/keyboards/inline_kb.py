@@ -37,7 +37,7 @@ def get_door_detail_keyboard(door_id: str, category_id: str) -> InlineKeyboardMa
             ],
             [
                 InlineKeyboardButton(text="📐 O'lchovga zamer chaqirish", callback_data=f"order_zamer_for:{door_id}"),
-                InlineKeyboardButton(text="💬 Maslahat olish", url="https://t.me/kokcha_eshiklari_admin")
+                InlineKeyboardButton(text="💬 Maslahat olish", url="https://t.me/kokchaeshiklari")
             ],
             [
                 InlineKeyboardButton(text="🔙 Kategoriya ro'yxatiga", callback_data=f"cat:{category_id}"),

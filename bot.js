@@ -72,11 +72,11 @@ function ensureSingleInstance() {
 }
 ensureSingleInstance();
 
-const BOT_TOKEN = env.BOT_TOKEN || '8943664247:AAGGV44K9UBl7Wm5kf5rP4JeSmFJ-xnMSlY';
+const BOT_TOKEN = env.BOT_TOKEN || process.env.BOT_TOKEN || '8943664247:AAGGV44K9UBl7Wm5kf5rP4JeSmFJ-xnMSlY';
 const API_URL = `https://api.telegram.org/bot${BOT_TOKEN}`;
 
 // Admin ID lari (Asosiy admin: Ergashev 8313616979)
-let ADMIN_IDS = (env.ADMIN_IDS || '8313616979')
+let ADMIN_IDS = (env.ADMIN_IDS || process.env.ADMIN_IDS || '8313616979')
   .split(',')
   .map(s => s.trim())
   .filter(Boolean)

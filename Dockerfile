@@ -8,7 +8,7 @@ COPY bot.js ./
 COPY assets ./assets
 COPY data ./data
 COPY database ./database
-COPY .env ./
+COPY .env* ./
 
 # Botni ishga tushirish
 CMD ["node", "bot.js"]

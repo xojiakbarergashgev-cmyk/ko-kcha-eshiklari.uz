@@ -1,3 +1,4 @@
+import http from 'http';
 /**
  * «Ko'kcha Eshiklar» Telegram Bot (High-Performance Universal Runner)
  * 
@@ -1458,4 +1459,21 @@ console.log("=========================================");
 // Eski webhooklarni tozalab pollingni boshlash
 apiCall('deleteWebhook', { drop_pending_updates: false }).then(() => {
   pollUpdatesLoop();
+});
+
+// ==========================================
+// Render Web Service Health Check HTTP Server
+// ==========================================
+const PORT = process.env.PORT || 3000;
+const healthServer = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "application/json" });
+  res.end(JSON.stringify({
+    status: "ok",
+    service: "Ko'kcha Eshiklar Telegram Bot",
+    uptime: Math.floor(process.uptime()) + "s"
+  }));
+});
+
+healthServer.listen(PORT, "0.0.0.0", () => {
+  console.log("Render Web Service HTTP server listening on port " + PORT);
 });
